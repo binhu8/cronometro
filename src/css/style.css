@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Red Hat Text';
+}
+
+main{
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(234, 17%, 12%);
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.stars{
+    max-width: 100%;
+    height: 70%;
+    animation: skyMove 90s ease infinite alternate;
+}
+
+.stars img{
+    width: 100%;
+}
+
+.footer{
+    width: 100%;
+    height: 40%;
+    position: relative;
+
+}
+
+.footer img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container{
+    width: 80%;
+    height: 300px;
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.clock{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1rem;
+
+    -webkit-box-shadow: 0px 10px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 3px 0px rgba(0, 0, 0, 0.219);
+    perspective: 2000px;
+
+
+}
+
+.folha-superior{
+    width: 100%;
+    height: 50%;
+    top: 0;
+    position: absolute;
+    background-color: hsla(235, 22%, 21%, 0.877);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: hidden;
+
+   
+}
+.clock.active .folha-superior{
+    transform-style: preserve-3d;
+    transform: rotateX(-180deg);
+    z-index: 90;
+    transform-origin: right bottom 0;
+    transition: transform 0.4s;
+    background-color: hsl(236, 21%, 26%);
+}
+
+.folha-superior p{
+    font-size: 80px;
+    position: absolute;
+    bottom: -70%;
+    transform: rotateX(0);
+    color: hsl(345, 95%, 68%);
+}
+
+.folha-superior p.active{
+    transform: rotateX(-180deg);
+ }
+ 
+
+.divisor-esquerdo{
+    width: 10px;
+    height: 20px;
+    background-color: hsla(235, 18%, 12%, 0.973);
+    position: absolute;
+    border-radius: 0 10px 10px 0;
+    z-index: 100;
+
+    -webkit-box-shadow: inset 1px -1px 2px 0px hsl(225, 11%, 7%);
+    -moz-box-shadow: inset 1px -1px 2px 0px hsl(225, 11%, 7%);
+    box-shadow: inset 1px -1px 2px 0px hsl(225, 11%, 7%);
+}
+
+.divisor-direito{
+    width: 10px;
+    height: 20px;
+    background-color: hsla(235, 18%, 12%, 0.938);
+    position: absolute;
+    right: 0;
+    border-radius: 10px 0px 0px 10px;
+    z-index: 100;
+
+    -webkit-box-shadow: inset 1px -1px 2px 0px hsl(225, 11%, 7%);
+    -moz-box-shadow: inset 1px -1px 2px 0px hsl(225, 11%, 7%);
+    box-shadow: inset -1px -1px 2px 0px hsl(234, 17%, 12%);
+}
+
+.folha-inferior{
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    position: absolute;
+    background-color: hsl(236, 21%, 26%);
+    border-top: 2px solid  hsla(235, 18%, 12%, 0.527);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+
+    -webkit-box-shadow: 1px -8px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px -8px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 15px 0px rgba(0, 0, 0, 0.411);
+}
+
+.clock.active .folha-inferior{
+    transform-style: preserve-3d;
+    transform: rotateX(-180deg);
+    z-index: 80;
+    transform-origin: right top 0;
+    transition: transform 0.4s;
+    transition-delay: 0.2s;
+    background-color: hsla(235, 22%, 21%, 0.877);
+}
+
+
+
+.folha-inferior p{
+    font-size: 80px;
+    position: absolute;
+    top: -70%;
+    transform: rotateX(0);
+    color: hsl(345, 95%, 68%);
+}
+
+.folha-inferior p.active{
+    font-size: 80px;
+    position: absolute;
+    top: -70%;
+    transform: rotateX(-180deg);
+    color: hsl(345, 95%, 68%);
+}
+
+.folha-superior p.active{
+    font-size: 80px;
+    position: absolute;
+    top: -70%;
+    transform: rotateX(-180deg);
+    color: hsl(345, 95%, 68%);
+}
+
+.folha-inferior p.active{
+   transform: rotateX(-180deg);
+}
+
+.infos{
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    position: absolute;
+    top: 62%;
+}
+
+.infos p{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    color:  hsl(237, 18%, 59%);
+}
+
+.header{
+    position: absolute;
+    top: 15%;
+    font-size: 30px;
+    color: #d8d8d8f3;
+}
+
+@media screen and (max-width: 500px){
+    .stars{
+        max-width: 100%;
+        height: 100%;
+        animation: skyMove 20s ease infinite alternate;
+        background-image: url(../images/bg-stars.svg);
+    }
+
+    .footer{
+        width: 100%;
+        height: 20%;
+        position: relative;
+    
+    }
+
+    .footer img{
+        width: 150%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .container{
+        width: 100%;
+        height: 300px;
+        position: absolute;
+    
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }    
+
+    .clock{
+        width: 100px !important;
+        height: 90px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 5px;
+    
+        -webkit-box-shadow: 0px 10px 3px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 10px 3px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 10px 3px 0px rgba(0, 0, 0, 0.219);
+    
+    }
+
+    .folha-superior p{
+        font-size: 40px;
+        position: absolute;
+        bottom: -58%;
+        color: hsl(345, 95%, 68%);
+    }
+
+    .folha-inferior p{
+        font-size: 40px;
+        position: absolute;
+        top: -60%;
+        color: hsl(345, 95%, 68%);
+    }
+
+    .infos{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    
+        position: absolute;
+        top: 61%;
+    }
+    .infos p{
+        width: 100px;
+        margin: 0 5px;
+    }
+
+    .header{
+        position: absolute;
+        top: 35%;
+        font-size: 20px;
+        color: #d8d8d8f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .folha-inferior p.active{
+        font-size: 40px;
+        position: absolute;
+        top: -54%;
+        transform: rotateX(-180deg);
+        color: hsl(345, 95%, 68%);
+    }
+    
+    .folha-superior p.active{
+        font-size: 40px;
+        position: absolute;
+        top: -50%;
+        transform: rotateX(-180deg);
+        color: hsl(345, 95%, 68%);
+    }
+    
+    .folha-inferior p.active{
+       transform: rotateX(-180deg);
+    }
+}
+
+
+
+@keyframes skyMove{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(10%);
+    }
+    100%{
+        transform: translateX(-10%);
+    }
+}
+
